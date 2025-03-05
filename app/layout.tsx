@@ -1,24 +1,19 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { PreloadHandler } from '@/shared/ui/components/PreloadHandler';
+import type { Metadata } from "next";
+import "./globals.css";
+import { PreloadHandler } from "@/shared/ui/components/PreloadHandler";
 
 export const metadata: Metadata = {
-  title: 'Betting App',
-  description: 'Система ставок с функцией проверки баланса',
+	title: "Betting App",
+	description: "Система ставок с функцией проверки баланса",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="ru">
-      <head>
-        {/* Добавляем скрипт для предотвращения мигания */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+	return (
+		<html lang="ru">
+			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
               // Добавляем класс 'loading' к html элементу
               document.documentElement.classList.add('loading');
               
@@ -32,13 +27,13 @@ export default function RootLayout({
                 document.documentElement.classList.remove('loading');
               }, 2000);
             `,
-          }}
-        />
-      </head>
-      <body>
-        <PreloadHandler />
-        {children}
-      </body>
-    </html>
-  );
+					}}
+				/>
+			</head>
+			<body>
+				<PreloadHandler />
+				{children}
+			</body>
+		</html>
+	);
 }

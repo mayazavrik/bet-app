@@ -23,7 +23,7 @@ const { Title, Text } = Typography;
 const BetStatistics: React.FC = () => {
   const { bets } = useAppSelector((state) => state.bet);
   
-  // Вычисляем статистику
+ 
   const statistics = useMemo(() => {
     // Фильтруем только завершенные ставки
     const completedBets = bets.filter(

@@ -13,9 +13,7 @@ import {
   resetBalanceAnimation
 } from '@/entities/balance/model/slice';
 
-/**
- * Асинхронное действие для получения баланса
- */
+
 export const getBalance = createAsyncThunk(
   'balance/get',
   async (_, { dispatch, rejectWithValue }) => {
@@ -25,8 +23,7 @@ export const getBalance = createAsyncThunk(
       const balance = await balanceApi.getBalance();
       
       dispatch(fetchBalanceSuccess(balance));
-      
-      // Сбрасываем анимацию через небольшую задержку
+
       setTimeout(() => {
         dispatch(resetBalanceAnimation());
       }, 1000);
@@ -40,9 +37,7 @@ export const getBalance = createAsyncThunk(
   }
 );
 
-/**
- * Асинхронное действие для установки начального баланса
- */
+
 export const setInitialBalance = createAsyncThunk(
   'balance/set',
   async (balance: number, { dispatch, rejectWithValue }) => {
@@ -65,9 +60,6 @@ export const setInitialBalance = createAsyncThunk(
   }
 );
 
-/**
- * Асинхронное действие для проверки баланса
- */
 export const checkBalance = createAsyncThunk(
   'balance/check',
   async (expectedBalance: number, { dispatch, rejectWithValue }) => {

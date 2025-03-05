@@ -1,9 +1,11 @@
 {
+  "/api/balance/route": "app/api/balance/route.js",
+  "/api/recommended-bet/route": "app/api/recommended-bet/route.js",
   "/api/auth/route": "app/api/auth/route.js",
   "/api/bet/route": "app/api/bet/route.js",
-  "/api/win/route": "app/api/win/route.js",
-  "/api/recommended-bet/route": "app/api/recommended-bet/route.js",
-  "/api/balance/route": "app/api/balance/route.js",
-  "/(auth)/login/page": "app/(auth)/login/page.js",
-  "/(protected)/dashboard/page": "app/(protected)/dashboard/page.js"
+  "/(protected)/dashboard/page": "app/(protected)/dashboard/page.js",
+  "/(protected)/balance/page": "app/(protected)/balance/page.js",
+  "/(protected)/history/page": "app/(protected)/history/page.js",
+  "/(protected)/statistics/page": "app/(protected)/statistics/page.js",
+  "/(auth)/login/page": "app/(auth)/login/page.js"
 }
